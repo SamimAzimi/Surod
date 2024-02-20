@@ -1,33 +1,115 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.parent {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.div1 { 
+    grid-area: 1 / 1 / 2 / 6; 
+}
+.div2 { 
+    height: 100%;
+    grid-area: 2 / 6 / 6 / 1; 
+   
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* .div3 {} */
+.header {
+        /* From https://css.glass */
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.searchbar, .titleSong , .lyrics{
+    
+    border-radius: 5% 5%;
+    outline: none;
+    border:1px solid blue;
+    transition: all ease-in 100ms;
+}
+
+.searchbar:focus, .titleSong:focus, .lyrics:focus {
+    border:3px solid blue;
+}
+.titleSong 
+{
+    min-height: 30px;
+}
+.searchbar {
+    min-height: 30px;
+    width: 50%;
+}
+.searchbar[placeholder], .titleSong[placeholder] {
+    text-align: right;
+    font-size: larger;
+    padding-right: 20px;
+    color: black;
+}
+
+.titleLogo {
+    color: blue;
+}
+
+form {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap:10px;
+
+}
+
+.lyrics {
+    min-height:70%;
+}
+.btnGroup {
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.btnGroup > button {
+    width: 100px;
+    height: 50px;
+    border-radius:10%;
+    border:none;
+    outline:none;
+}
+
+.actionBtn 
+{
+    background-color: blue;
+    color:white;
+}
+.lyrics {
+    height: 40%;
+    text-align: right;
+}
+.actionBtn:hover
+{
+    background-color: black;
+    color:white;
+}
+.cancelBtn {
+    background-color: red;
+    color:white;
+    transition: all ease-in-out 100ms;
+}
+
+.cancelBtn:hover 
+{
+    background-color: black;
 }
