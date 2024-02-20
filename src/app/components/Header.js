@@ -4,10 +4,10 @@ import Image from 'next/image'
 function Header(setUpdateSong) {
   
   return (
-    <div className='header'>
-      <input type="search" name="search" className='searchbar' placeholder="جستجو آهنگ"/>
+    <div class='header'>
+      <input type="search" name="search" class='searchbar' placeholder="جستجو آهنگ"/>
       <h1 className='titleLogo'>سرود</h1>
-      <div className='logoContainer'>
+      <div class='logoContainer'>
         <Image src={SurodLogo} alt="Surod App" />
       </div>
     </div>

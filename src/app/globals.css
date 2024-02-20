@@ -33,7 +33,14 @@
     margin-left: auto;
 
 }
-
+ 
+.logoContainer {
+    height: 100%;
+}
+.logoContainer > img {
+    width: 100%;
+    height: 100%;
+}
 .searchbar, .titleSong , .lyrics{
     
     border-radius: 5% 5%;
@@ -73,6 +80,7 @@ form {
 }
 
 .lyrics {
+    border-radius:10% 10% 10% 10% / 10% 10% 10% 10% ;
     min-height:70%;
 }
 .btnGroup {
