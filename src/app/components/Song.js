@@ -19,7 +19,7 @@ function Song(updateSong,setUpdateSong) {
   return (
     <div class="songContainer">
         <form id={updateSong.id}>
-            <input type="text" name='title' onChange={handleChangeUpdate} class="titleSong" placeholder='نام آهنگ' value={updateSong.title} />
+            <input type="text" name='title' onChange={handleChangeUpdate} class="titleSong" placeholder="نام آهنگ" value={updateSong.title} />
             <lable>متن آهنگ</lable>
             <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyric} />
 

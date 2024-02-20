@@ -1,5 +1,6 @@
 import React, {useState }from 'react'
-import {ToastContainer, toast} from 'react-toastify'
+import {db} from '../firebaseConfig'
+import {toast} from 'react-toastify'
 function add() {
     const [song,setSong] = useState({
         
@@ -17,7 +18,15 @@ function add() {
         
         if(song.title && song.lyric)
         {
-            //submit to firestack
+            db.collection("lyrics").add(song)
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+                toast.info("آهنگ شما ثبت گردید")
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+                toast.info("در جریان ثبت مشکل رخ داده است")
+            });
         }
         else
         {
@@ -26,8 +35,10 @@ function add() {
     }
     const cancel=(e)=>{
         setSong(
-            {"title": "",
-        "lyric":""}
+            {
+                "title": "",
+                "lyric":""
+            }
         )
     }
   return (

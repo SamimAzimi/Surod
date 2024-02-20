@@ -4,7 +4,7 @@ function header(setUpdateSong) {
   
   return (
     <div className='header'>
-      <input type="search" name="search" className='searchbar' placeholder='جستجو آهنگ'/>
+      <input type="search" name="search" className='searchbar' placeholder="جستجو آهنگ"/>
       <h1 className='titleLogo'>سرود</h1>
       <div className='logoContainer'>
         <img src={SurodLogo} alt="Surod App" />
