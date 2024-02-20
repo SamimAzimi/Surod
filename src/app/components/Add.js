@@ -1,7 +1,7 @@
 import React, {useState }from 'react'
 import {db} from '../firebaseConfig'
 import {toast} from 'react-toastify'
-function add() {
+function Add() {
     const [song,setSong] = useState({
         
         "title": "",
@@ -57,4 +57,4 @@ function add() {
   )
 }
 
-export default add
+export default Add

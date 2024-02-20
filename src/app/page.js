@@ -1,7 +1,7 @@
 "use client"
 import React, {useState} from 'react';
-import Header from './components/header'
-import Add from './components/add'
+import Header from './components/Header'
+import Add from './components/Add'
 import Song from './components/Song'
 import {ToastContainer} from 'react-toastify'
 export default function Home() {
