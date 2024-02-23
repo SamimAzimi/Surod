@@ -6,17 +6,21 @@ import { collection, query, where,getDocs } from "firebase/firestore";
 function Header(setUpdateSong) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
-  async const getDoc = ()=>{
+  const getDoc = ()=>{
     if (search)
     {
      const q = query(collectionRef, where("title", "==", search));
-     const querySnapshot = await getDocs(q);
-      if (querySnapshot){setUpdateSong(querySnapshot)}
-      querySnapshot.forEach((doc) => {
+     const querySnapshot = getDocs(q);
+      if (querySnapshot){
+        setUpdateSong(querySnapshot)
+        querySnapshot.forEach((doc) => {
               // doc.data() is never undefined for query doc snapshots
               console.log(doc.id, " => ", doc.data());
               
           });
+      
+      }
+      
     }
   }
   
