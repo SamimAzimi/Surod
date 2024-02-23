@@ -9,7 +9,7 @@ function Header(setUpdateSong) {
   const getDoc = ()=>{
     if (search)
     {
-     const q = query(citiesRef, where("title", "==", search));
+     const q = query(collectionRef, where("title", "==", search));
       if(q)
       {
         console.log(q)
