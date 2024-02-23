@@ -6,7 +6,7 @@ import { collection, query, where,getDocs } from "firebase/firestore";
 function Header(setUpdateSong) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
-  const getDoc = ()=>{
+  async const getDoc = ()=>{
     if (search)
     {
      const q = query(collectionRef, where("title", "==", search));
