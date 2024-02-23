@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import SurodLogo from '../assets/logo.png'
 import Image from 'next/image'
 import {db} from '../firebaseConfig'
-import { collection, query, where } from "firebase/firestore";
+import { collection, query, where,getDocs } from "firebase/firestore";
 function Header(setUpdateSong) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
@@ -10,15 +10,13 @@ function Header(setUpdateSong) {
     if (search)
     {
      const q = query(collectionRef, where("title", "==", search));
-      if(q)
-      {
-        console.log(q)
-        setUpdateSong(q)
-      }
-      else
-      {
-        console.log("no data")
-      }
+     const querySnapshot = await getDocs(q);
+      if (querySnapshot){setUpdateSong(querySnapshot)}
+      querySnapshot.forEach((doc) => {
+              // doc.data() is never undefined for query doc snapshots
+              console.log(doc.id, " => ", doc.data());
+              
+          });
     }
   }
   
