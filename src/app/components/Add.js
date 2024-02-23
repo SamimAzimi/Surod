@@ -1,7 +1,9 @@
 import React, {useState }from 'react'
-import {db} from '../firebaseConfig'
+import db from '../firebaseConfig'
+import { collection, addDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 function Add() {
+    const collectionref = collection(db, "lyrics")
     const [song,setSong] = useState({
         
         "title": "",
@@ -18,8 +20,8 @@ function Add() {
         
         if(song.title && song.lyric)
         {
-            db.collection("lyrics").add(song)
-            .then((docRef) => {
+            addDoc(collectionref,song).then((docRef)=>{
+                
                 console.log("Document written with ID: ", docRef.id);
                 toast.info("آهنگ شما ثبت گردید")
             })

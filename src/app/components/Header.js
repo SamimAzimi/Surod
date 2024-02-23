@@ -13,6 +13,9 @@ function Header(setUpdateSong) {
       <div class='logoContainer'>
         <Image src={SurodLogo} alt="Surod App" />
       </div>
+      <div>
+        
+      </div>
     </div>
   )
 }
