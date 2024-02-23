@@ -17,7 +17,7 @@ function Header(setUpdateSong) {
       }
       else
       {
-        console.log("data doesn't exist')
+        console.log("no data")
       }
     }
   }
