@@ -2,14 +2,23 @@ import React,{useState} from 'react'
 import SurodLogo from '../assets/logo.png'
 import Image from 'next/image'
 import {db} from '../firebaseConfig'
-import {getDoc, collection} from'firebase/firestore'
+import { collection, query, where } from "firebase/firestore";
 function Header(setUpdateSong) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
   const getDoc = ()=>{
     if (search)
     {
-      getDoc(collectionRef).then((data)=>{console.log(data)})
+     const q = query(citiesRef, where("title", "==", search));
+      if(q)
+      {
+        console.log(q)
+        setUpdateSong(q)
+      }
+      else
+      {
+        console.log("data doesn't exist')
+      }
     }
   }
   
