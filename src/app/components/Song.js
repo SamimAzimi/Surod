@@ -31,7 +31,7 @@ function Song({updateSong,setUpdateSong}) {
         <form id={updateSong.id}>
             <input type="text" name='title' onChange={handleChangeUpdate} class="titleSong" placeholder="نام آهنگ" value={updateSong.title} />
             <label>متن آهنگ</label>
-            <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyrics} />
+            <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyric} />
 
         <div class="grpBtn">
             <button type="submit" onClick={handleSubmit} >تصحیح</button>
