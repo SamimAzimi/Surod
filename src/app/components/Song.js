@@ -1,11 +1,12 @@
 import React from 'react'
-
+import { doc, deleteDoc } from "firebase/firestore";
 function Song({updateSong}) {
 
-    console.log(updateSong)
-    const handleDelete=(id)=>{
 
-        console.log(id)
+
+    const handleDelete=()=>{
+        await deleteDoc(doc(db, "cities", "DC"));
+        console.log(updateSong.id)
     }
     const handleChangeUpdate=(e)=>{
          const name = e.target.name
@@ -26,7 +27,7 @@ function Song({updateSong}) {
 
         <div class="grpBtn">
             <button type="submit" onClick={handleSubmit} >تصحیح</button>
-            <button onClick={handleDelete(updateSong.id)} >حذف</button>
+            <button onClick={handleDelete} >حذف</button>
         </div>
         </form>
     </div>
