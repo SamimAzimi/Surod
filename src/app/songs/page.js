@@ -15,7 +15,7 @@ function page() {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, " => ", doc.data());
-        data.append(doc.data())
+        data.push(doc.data())
       });
       setSongs(data)
       console.log(songs)
@@ -29,12 +29,12 @@ function page() {
     <>
     <h1>Back To Home</h1>
     <ul>
-      {/* {songs.map(song=>{
+      {songs.maps(song=>{
         return (
 
           <li><h1>{song.title}</h1></li>
         )
-      })} */}
+      })}
     </ul>
     </>
   )
