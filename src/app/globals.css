@@ -147,7 +147,7 @@ form {
 }
 .searchGrp {
     flex-grow:3;
-    justify-content:left;
+    justify-content:right;
 }
 a {
     text-decoration:none;
