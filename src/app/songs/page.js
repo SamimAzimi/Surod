@@ -29,7 +29,7 @@ function page() {
     <>
     <h1>Back To Home</h1>
     <ul>
-      {songs.maps(song=>{
+      {songs && songs.map(song=>{
         return (
 
           <li><h1>{song.title}</h1></li>
