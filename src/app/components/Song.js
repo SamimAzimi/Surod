@@ -3,7 +3,8 @@ import React from 'react'
 function Song({updateSong}) {
 
     console.log(updateSong)
-    const handleDelete=(id)=>{
+    const handleDelete=(e,id)=>{
+        e.preventDefault()
         console.log(id)
     }
     const handleChangeUpdate=(e)=>{
