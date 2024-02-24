@@ -1,8 +1,8 @@
 import React, {useState }from 'react'
-import {db} from '../../app/firebaseConfig'
+import {db} from '../firebaseConfig'
 import { collection, addDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
-function AllSong() {
+function page() {
     const collectionref = collection(db, "lyrics")
 
   return (
@@ -12,4 +12,4 @@ function AllSong() {
   )
 }
 
-export default AllSong
+export default page
