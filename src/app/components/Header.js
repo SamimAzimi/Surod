@@ -17,7 +17,7 @@ function Header(setUpdateSong) {
         console.log(querySnapshot)
         setUpdateSong({
           "id":doc.id,
-          doc.data()
+          ...doc.data()
         })
       });
     }
