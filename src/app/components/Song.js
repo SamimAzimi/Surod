@@ -4,9 +4,8 @@ function Song({updateSong}) {
 
 
 
-    const handleDelete=()=>{
-        await deleteDoc(doc(db, "cities", "DC"));
-        console.log(updateSong.id)
+    const handleDelete= async ()=>{
+        await deleteDoc(doc(db, "lyrics", updateSong.id));
     }
     const handleChangeUpdate=(e)=>{
          const name = e.target.name
