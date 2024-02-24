@@ -3,7 +3,7 @@ import SurodLogo from '../assets/logo.png'
 import Image from 'next/image'
 import {db} from '../firebaseConfig'
 import { collection, query, where,getDocs } from "firebase/firestore";
-function Header(setUpdateSong) {
+function Header({setUpdateSong}) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
   const getDoc = async ()=>{
@@ -21,7 +21,7 @@ function Header(setUpdateSong) {
       });
     }
   }
-  
+
   return (
     <div class='header'>
       <input type="search" name="search" value={search} onChange={(e)=>setSearch(e.target.value)} class='searchbar' placeholder="جستجو آهنگ"/>
@@ -30,7 +30,7 @@ function Header(setUpdateSong) {
         <Image src={SurodLogo} alt="Surod App" />
       </div>
       <div>
-        
+
       </div>
     </div>
   )
