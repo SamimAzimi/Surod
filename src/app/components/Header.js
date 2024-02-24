@@ -9,6 +9,7 @@ function Header(setUpdateSong) {
   const getDoc = async ()=>{
     if (search)
     {
+      const q = query(collectionRef, where("title", "==", search));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
