@@ -2,13 +2,19 @@ import React from 'react'
 import {db} from '../firebaseConfig'
 import { doc, deleteDoc } from "firebase/firestore";
 import {toast} from 'react-toastify'
-function Song({updateSong}) {
+function Song({updateSong,setUpdateSong}) {
 
 
 
-    const handleDelete= async ()=>{
+    const handleDelete= async (e)=>{
+        e.preventDefault()
         await deleteDoc(doc(db, "lyrics", updateSong.id));
         toast.info("این آهنگ حذف گردید")
+        setUpdateSong({
+            "title":"",
+            "id":"",
+            "lyrics":""
+          })
     }
     const handleChangeUpdate=(e)=>{
          const name = e.target.name
