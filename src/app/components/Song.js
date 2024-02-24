@@ -18,14 +18,14 @@ function Song({updateSong}) {
     }
   return (
     <div class="songContainer">
-        <form >
+        <form id={updateSong.id}>
             <input type="text" name='title' onChange={handleChangeUpdate} class="titleSong" placeholder="نام آهنگ" value={updateSong.title} />
             <label>متن آهنگ</label>
-            <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyric} />
+            <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyrics} />
 
         <div class="grpBtn">
             <button type="submit" onClick={handleSubmit} >تصحیح</button>
-            <button type="submit" onClick={handleDelete} >حذف</button>
+            <button type="submit" onClick={()=>handleDelete(updateSong.id)} >حذف</button>
         </div>
         </form>
     </div>
