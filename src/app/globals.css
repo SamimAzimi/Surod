@@ -152,4 +152,10 @@ form {
 a {
     text-decoration:none;
 }
+.searchbtn {
+    border:none;
+}
 
+.allSongContainer {
+    text-align:right;
+}
