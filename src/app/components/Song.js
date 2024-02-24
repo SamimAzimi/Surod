@@ -1,4 +1,5 @@
 import React from 'react'
+import {db} from '../firebaseConfig'
 import { doc, deleteDoc } from "firebase/firestore";
 function Song({updateSong}) {
 
