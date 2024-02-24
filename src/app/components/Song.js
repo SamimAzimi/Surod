@@ -2,7 +2,7 @@ import React from 'react'
 
 function Song({updateSong}) {
 
-
+    console.log(updateSong)
     const handleDelete=(id)=>{
         console.log(id)
     }
