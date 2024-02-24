@@ -145,3 +145,11 @@ form {
 {
     background-color: black;
 }
+.searchGrp {
+    flex-grow:3;
+    justify-content:left;
+}
+a {
+    text-decoration:none;
+}
+
