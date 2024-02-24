@@ -25,7 +25,7 @@ function Song(updateSong,setUpdateSong) {
 
         <div class="grpBtn">
             <button type="submit" onClick={handleSubmit} >تصحیح</button>
-            <button type="submit" onClick={handleDelete(updateSong.id)} >حذف</button>
+            <button type="submit" onClick={()=>handleDelete(updateSong.id)} >حذف</button>
         </div>
         </form>
     </div>
