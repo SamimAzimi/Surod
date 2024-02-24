@@ -36,9 +36,9 @@ function Song({updateSong,setUpdateSong}) {
             <label>متن آهنگ</label>
             <textarea name="lyric" class="lyrics" onChange={handleChangeUpdate} value={updateSong.lyric} />
 
-        <div class="grpBtn">
-            <button type="submit" onClick={handleSubmit} >تصحیح</button>
-            <button onClick={handleDelete} >حذف</button>
+        <div class="btnGroup">
+            <button type="submit" onClick={handleSubmit}  class="actionBtn"  >تصحیح</button>
+            <button onClick={handleDelete} class="cancelBtn">حذف</button>
         </div>
         </form>
     </div>
