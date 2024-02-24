@@ -8,13 +8,13 @@
 
 }
 
-.div1 { 
-    grid-area: 1 / 1 / 2 / 6; 
+.div1 {
+    grid-area: 1 / 1 / 2 / 6;
 }
-.div2 { 
+.div2 {
     height: 100%;
-    grid-area: 2 / 6 / 6 / 1; 
-   
+    grid-area: 2 / 6 / 6 / 1;
+
 }
 
 /* .div3 {} */
@@ -26,14 +26,14 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 1);
-    
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-left: auto;
 
 }
- 
+
 .logoContainer {
     height: 100%;
 }
@@ -42,7 +42,7 @@
     height: 50%;
 }
 .searchbar, .titleSong , .lyrics{
-    
+
     border-radius: 5% 5%;
     outline: none;
     border:1px solid blue;
@@ -52,7 +52,7 @@
 .searchbar:focus, .titleSong:focus, .lyrics:focus {
     border:3px solid blue;
 }
-.titleSong 
+.titleSong
 {
     min-height: 30px;
 }
@@ -122,7 +122,7 @@ form {
     outline:none;
 }
 
-.actionBtn 
+.actionBtn
 {
     background-color: blue;
     color:white;
@@ -142,7 +142,13 @@ form {
     transition: all ease-in-out 100ms;
 }
 
-.cancelBtn:hover 
+.cancelBtn:hover
 {
     background-color: black;
+}
+.searchGrp {
+    display:flex;
+    align-items:right;
+    flex-grow:3;
+    border:1px solid black;
 }
