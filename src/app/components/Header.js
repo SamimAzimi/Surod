@@ -9,17 +9,19 @@ function Header(setUpdateSong) {
   const getDoc = ()=>{
     if (search)
     {
-     const q = query(collectionRef, where("title", "==", search));
-     const querySnapshot = getDocs(q);
-      if (querySnapshot){
-        setUpdateSong(querySnapshot)
+    db.collection("lyrics").where("title", "==", search)
+    .get()
+    .then((querySnapshot) => {
+      setUpdateSong(querySnapshot)
         querySnapshot.forEach((doc) => {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
-              
-          });
-      
-      }
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+
       
     }
   }
