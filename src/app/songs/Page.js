@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import {db} from '../firebaseConfig'
 import { collection, getDocs} from 'firebase/firestore'
 import {toast} from 'react-toastify'
-function page() {
+function Page() {
     const collectionref = collection(db, "lyrics")
     const [songs,setSongs] = useState([])
 
@@ -33,7 +33,7 @@ function page() {
           {songs && songs.map(song=>{
             return (
 
-              <li><h1 class="songName">{song.title}</h1></li>
+              <li key={song.id}><h1 class="songName">{song.title}</h1></li>
             )
           })}
         </ul>
@@ -42,4 +42,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
