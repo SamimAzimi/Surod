@@ -8,28 +8,31 @@ function page() {
     const collectionref = collection(db, "lyrics")
     const [songs,setSongs] = useState([])
 
-    useEffect(async()=>{
-
+    const doSomething = async() =>{
       const querySnapshot = await getDocs(collectionref);
-      console.log(querySnapshot.doc)
-      setSongs(querySnapshot.doc)
+      // console.log(querySnapshot.doc)
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
+        setSongs([...doc.data])
+        console.log(songs)
       });
+      }
 
+    useEffect(()=>{
+      doSomething();
     })
 
   return (
     <>
     <h1>Back To Home</h1>
     <ul>
-      {songs.map(song=>{
+      {/* {songs.map(song=>{
         return (
 
           <li><h1>{song.title}</h1></li>
         )
-      })}
+      })} */}
     </ul>
     </>
   )
