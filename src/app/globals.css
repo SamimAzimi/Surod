@@ -38,8 +38,8 @@
     height: 100%;
 }
 .logoContainer > img {
-    width: 50px;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 .searchbar, .titleSong , .lyrics{
 
@@ -80,8 +80,7 @@ form {
 }
 
 .lyrics {
-    padding-right:12px;
-    border-radius:1% 1% 1% 1% / 1% 1% 1% 1% ;
+    border-radius:10% 10% 10% 10% / 10% 10% 10% 10% ;
     min-height:70%;
 }
 .btnGroup {
@@ -136,11 +135,6 @@ form {
     background-color: black;
     color:white;
 }
-.searchbtn {
-    outline:none;
-    border:none;
-    border-radius:50%;
-}
 .cancelBtn {
     background-color: red;
     color:white;
@@ -150,21 +144,4 @@ form {
 .cancelBtn:hover
 {
     background-color: black;
-}
-.searchGrp {
-    display:flex;
-    justify-content: flex-end;
-    flex-grow:3;
-
-}
-.allSongContainer,.songListUl, .songListUl > li {
-    padding-right:100px;
-    text-align:right;
-}
-a {
-    text-decoration:none;
-}
-
-.songName{
-    cursor:hand;
 }
