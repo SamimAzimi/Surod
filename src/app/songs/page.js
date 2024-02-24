@@ -11,13 +11,14 @@ function page() {
     useEffect(async()=>{
 
       const querySnapshot = await getDocs(collectionref);
+      console.log(querySnapshot.doc)
+      setSongs(querySnapshot.doc)
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-        setSongs(...doc)
       });
 
-    },[])
+    })
 
   return (
     <>
