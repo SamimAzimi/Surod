@@ -157,3 +157,9 @@ form {
     flex-grow:3;
 
 }
+.allSongContainer {
+    text-align:right;
+}
+a {
+    text-decoration:none;
+}

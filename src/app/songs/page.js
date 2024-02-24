@@ -6,7 +6,7 @@ import { collection, getDocs} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 function page() {
     const collectionref = collection(db, "lyrics")
-    const [songs,setSongs] = useState()
+    const [songs,setSongs] = useState([])
 
     const doSomething = async() =>{
       const querySnapshot = await getDocs(collectionref);
@@ -27,15 +27,17 @@ function page() {
 
   return (
     <>
-    <h1>Back To Home</h1>
-    <ul>
-      {songs && songs.map(song=>{
-        return (
+    <div class="allSongContainer">
+        <h3><a href="/">صفحه اصلی</a></h3>
+        <ul>
+          {songs && songs.map(song=>{
+            return (
 
-          <li><h1>{song.title}</h1></li>
-        )
-      })}
-    </ul>
+              <li><h1>{song.title}</h1></li>
+            )
+          })}
+        </ul>
+    </div>
     </>
   )
 }
