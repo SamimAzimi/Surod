@@ -5,11 +5,7 @@ import Add from './components/Add'
 import Song from './components/Song'
 import {ToastContainer} from 'react-toastify'
 export default function Home() {
-    const [updateSong,setUpdateSong] = useState({
-        "id":"",
-        "title": "",
-        "lyric":""
-    })
+    const [updateSong,setUpdateSong] = useState()
 
   return (
     <>
