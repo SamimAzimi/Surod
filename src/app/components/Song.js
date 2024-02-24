@@ -3,8 +3,8 @@ import React from 'react'
 function Song({updateSong}) {
 
     console.log(updateSong)
-    const handleDelete=(e,id)=>{
-        e.preventDefault()
+    const handleDelete=(id)=>{
+
         console.log(id)
     }
     const handleChangeUpdate=(e)=>{
@@ -26,7 +26,7 @@ function Song({updateSong}) {
 
         <div class="grpBtn">
             <button type="submit" onClick={handleSubmit} >تصحیح</button>
-            <button onClick={()=>handleDelete(updateSong.id)} >حذف</button>
+            <button onClick={handleDelete(updateSong.id)} >حذف</button>
         </div>
         </form>
     </div>
