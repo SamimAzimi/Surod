@@ -24,6 +24,12 @@ function Add() {
 
                 console.log("Document written with ID: ", docRef.id);
                 toast.info("آهنگ شما ثبت گردید")
+                setSong(
+                    {
+                        "title": "",
+                        "lyric":""
+                    }
+                )
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
