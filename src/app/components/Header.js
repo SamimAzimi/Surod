@@ -17,8 +17,7 @@ function Header(setUpdateSong) {
         console.log(querySnapshot)
         setUpdateSong({
           "id":doc.id,
-        "title": doc.title,
-        "lyric": doc.lyrics
+          doc.data()
         })
       });
     }
@@ -26,7 +25,7 @@ function Header(setUpdateSong) {
   
   return (
     <div class='header'>
-      <input type="search" name="search" value={search} onChange={(e)=>setSearch(e.target.value)} class='searchbar' placeholder="جستجو آهنگ"/>
+      <input type="search" name="search" value={search} onChange={()=>setSearch(e.target.value)} class='searchbar' placeholder="جستجو آهنگ"/>
       <button type="submit" class="searchBtn" onClick={getDoc}>جستجو</button>
       <div class='logoContainer'>
         <Image src={SurodLogo} alt="Surod App" />
