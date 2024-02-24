@@ -6,23 +6,14 @@ import { collection, query, where,getDocs } from "firebase/firestore";
 function Header(setUpdateSong) {
   const collectionRef = collection(db,'lyrics')
   const [search,setSearch] = useState()
-  const getDoc = ()=>{
+  const getDoc = async ()=>{
     if (search)
     {
-    db.collection("lyrics").where("title", "==", search)
-    .get()
-    .then((querySnapshot) => {
-      setUpdateSong(querySnapshot)
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-
-      
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+      });
     }
   }
   
