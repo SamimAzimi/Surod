@@ -1,6 +1,7 @@
 import React from 'react'
 import {db} from '../firebaseConfig'
-import { doc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc, updateDoc} from "firebase/firestore";
+
 import {toast} from 'react-toastify'
 function Song({updateSong,setUpdateSong}) {
 
@@ -19,12 +20,14 @@ function Song({updateSong,setUpdateSong}) {
     const handleChangeUpdate=(e)=>{
          const name = e.target.name
         const value = e.target.value
-        // setUpdateSong({...updateSong, [name]:value})
+        setUpdateSong({...updateSong, [name]:value})
     }
-    const handleSubmit=(e)=>{
-
+    const handleSubmit= async (e)=>{
+        const updateDOcred = doc(db, "lyrics", updateSong.id);
         e.preventDefault()
+        await updateDoc(updateDOcred, updateSong);
         console.log(e)
+        toast.info("آهنگ شما تصحیح گردید")
     }
   return (
     <div class="songContainer">
