@@ -6,7 +6,7 @@ import { collection, getDocs} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 function page() {
     const collectionref = collection(db, "lyrics")
-    const [songs,setSongs] = useState([])
+    const [songs,setSongs] = useState()
 
     const doSomething = async() =>{
       const querySnapshot = await getDocs(collectionref);
@@ -14,7 +14,7 @@ function page() {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, " => ", doc.data());
-        setSongs([...doc.data])
+        setSongs(doc.data())
         console.log(songs)
       });
       }
