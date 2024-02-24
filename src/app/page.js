@@ -11,6 +11,8 @@ export default function Home() {
       "lyrics":""
     })
 
+    console.log(updateSong)
+
   return (
     <>
       <main class="parent">
@@ -18,7 +20,7 @@ export default function Home() {
                 <Header setUpdateSong={setUpdateSong}/>
             </div>
             <div class="div2">
-                {updateSong?<Add />:<Song updateSong={updateSong}/>}
+                {updateSong.title != "" ?<Add />:<Song updateSong={updateSong}/>}
             </div>
         </main>
             <ToastContainer/>
