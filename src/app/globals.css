@@ -157,9 +157,14 @@ form {
     flex-grow:3;
 
 }
-.allSongContainer {
+.allSongContainer,.songListUl, .songListUl > li {
+    padding-right:100px;
     text-align:right;
 }
 a {
     text-decoration:none;
+}
+
+.songName{
+    cursor:hand;
 }
