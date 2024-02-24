@@ -14,7 +14,7 @@ export default function Home() {
                 <Header setUpdateSong={setUpdateSong}/>
             </div>
             <div class="div2">
-                {updateSong?<Add />:<Song updateSong={updateSong} setUpdateSong={setUpdateSong}/>}
+                {updateSong?<Add />:<Song updateSong={updateSong}/>}
             </div>
         </main>
             <ToastContainer/>
