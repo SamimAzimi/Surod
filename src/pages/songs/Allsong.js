@@ -1,5 +1,5 @@
 import React, {useState }from 'react'
-import {db} from '../app/firebaseConfig'
+import {db} from '../../app/firebaseConfig'
 import { collection, addDoc} from 'firebase/firestore'
 import {toast} from 'react-toastify'
 function AllSong() {
