@@ -5,7 +5,13 @@ import Add from './components/Add'
 import Song from './components/Song'
 import {ToastContainer} from 'react-toastify'
 export default function Home() {
-    const [updateSong,setUpdateSong] = useState()
+    const [updateSong,setUpdateSong] = useState(
+      {
+        "title":"",
+        "lyrics":"",
+        "id":"",
+      }
+    )
 
   return (
     <>
@@ -13,7 +19,7 @@ export default function Home() {
             <div class="div1">
                 <Header setUpdateSong={setUpdateSong}/>
             </div>
-            <div class="div2"> 
+            <div class="div2">
                 {updateSong?<Add />:<Song updateSong={updateSong} setUpdateSong={setUpdateSong}/>}
             </div>
         </main>
