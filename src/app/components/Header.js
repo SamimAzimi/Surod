@@ -28,7 +28,7 @@ function Header({setUpdateSong}) {
   return (
     <div class='header'>
       <div class="searchGrp">
-      <button type="submit" class="searchBtn" onClick={getDoc}>جستجو</button>
+      <button type="submit" class="actionBtn searchbtn" onClick={getDoc}>جستجو</button>
       <input type="search" name="search" value={search} onChange={(e)=>setSearch(e.target.value)} class='searchbar' placeholder="جستجو آهنگ"/>
       </div>
       <div class='logoContainer'>

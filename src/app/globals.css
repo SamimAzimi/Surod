@@ -136,6 +136,11 @@ form {
     background-color: black;
     color:white;
 }
+.searchbtn {
+    outline:none;
+    border:none;
+    border-radius:50%;
+}
 .cancelBtn {
     background-color: red;
     color:white;
@@ -148,7 +153,7 @@ form {
 }
 .searchGrp {
     display:flex;
-    align-items:right;
+    justify-content: flex-end;
     flex-grow:3;
-    border:1px solid black;
+
 }
