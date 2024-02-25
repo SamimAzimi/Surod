@@ -161,3 +161,6 @@ a {
     padding-right:30px;
     text-align:right;
 }
+.songName {
+    cursor:pointer;
+}
