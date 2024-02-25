@@ -13,7 +13,6 @@ function Header({setUpdateSong}) {
     {
       const q = query(collectionRef, where("title", "==", search));
       const querySnapshot = await getDocs(q);
-      console.log(querySnapshot.empty)
         if (querySnapshot.empty) {
 
           toast.info("آهنگ شما دریافت نگردید");
@@ -27,6 +26,7 @@ function Header({setUpdateSong}) {
             })
           });
         }
+        setSearch('')
 
     }
     else {

@@ -20,7 +20,10 @@ function Page() {
       setSongs(data)
       console.log(songs)
     }
-
+    const handleSong = (song)=>
+    {
+      console.log(song)
+    }
     useEffect(()=>{
       doSomething();
     },[])
@@ -31,7 +34,7 @@ function Page() {
         <h3><a href="/">صفحه اصلی</a></h3>
           {songs && songs.map(song=>{
             return (
-              <h3 key={song.id} class="songName">{song.title}</h3>
+              <h3 key={song.id} class="songName" onClick={handleSong(song)}>{song.title}</h3>
             )
           })}
     </div>
