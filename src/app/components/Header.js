@@ -13,15 +13,22 @@ function Header({setUpdateSong}) {
     {
       const q = query(collectionRef, where("title", "==", search));
       const querySnapshot = await getDocs(q);
-      if (!querySnapshot.doc) {toast.info("آهنگ شما دریافت نگردید");setSearch('')}
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data(), doc);
-        setUpdateSong({
-          "id":doc.id,
-          ...doc.data()
-        })
-      });
+        if (querySnapshot.exists()) {
+          querySnapshot.forEach((doc) => {
+            setUpdateSong({
+              "id":doc.id,
+              ...doc.data()
+            })
+          });
+        } else {
+          // docSnap.data() will be undefined in this case
+          toast.info("آهنگ شما دریافت نگردید");
+          setSearch('')
+        }
+
+    }
+    else {
+      toast.info("نام اهنگ جهت جستجو وجود ندارد");
     }
   }
 
