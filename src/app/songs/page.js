@@ -29,14 +29,12 @@ function Page() {
     <>
     <div class="allSongContainer">
         <h3><a href="/">صفحه اصلی</a></h3>
-        <ul class="songListUl">
           {songs && songs.map(song=>{
             return (
 
-              <li key={song.id}><h1 class="songName">{song.title}</h1></li>
+              <h3 key={song.id} class="songName">{song.title}</h3>
             )
           })}
-        </ul>
     </div>
     </>
   )
