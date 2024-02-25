@@ -1,6 +1,7 @@
 # Surod
-#### Video Demo:  <URL HERE>
-#### Website URL: <URL >
+----
+#### Video Demo:    [URL](https://surod.netlify.app/).
+#### Website Demo:  [URL](https://surod.netlify.app/).
 #### Description:
 This simple web application store song's title and lyric in firebase cloud store no sql database
 The user will be able to search the stored songs by their title
