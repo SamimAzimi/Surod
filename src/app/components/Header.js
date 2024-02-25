@@ -13,7 +13,9 @@ function Header({setUpdateSong}) {
     {
       const q = query(collectionRef, where("title", "==", search));
       const querySnapshot = await getDocs(q);
-        if (querySnapshot.exists()) {
+      console.log(querySnapshot)
+        if (querySnapshot.exists) {
+
           querySnapshot.forEach((doc) => {
             setUpdateSong({
               "id":doc.id,
