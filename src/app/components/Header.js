@@ -13,19 +13,19 @@ function Header({setUpdateSong}) {
     {
       const q = query(collectionRef, where("title", "==", search));
       const querySnapshot = await getDocs(q);
-      console.log(querySnapshot)
-        if (querySnapshot.exists) {
+      console.log(querySnapshot.empty)
+        if (querySnapshot.empty) {
 
+          toast.info("آهنگ شما دریافت نگردید");
+          setSearch('')
+        } else {
+          // docSnap.data() will be undefined in this case
           querySnapshot.forEach((doc) => {
             setUpdateSong({
               "id":doc.id,
               ...doc.data()
             })
           });
-        } else {
-          // docSnap.data() will be undefined in this case
-          toast.info("آهنگ شما دریافت نگردید");
-          setSearch('')
         }
 
     }
