@@ -31,7 +31,6 @@ function Page() {
         <h3><a href="/">صفحه اصلی</a></h3>
           {songs && songs.map(song=>{
             return (
-
               <h3 key={song.id} class="songName">{song.title}</h3>
             )
           })}
