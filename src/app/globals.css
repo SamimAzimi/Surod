@@ -146,6 +146,7 @@ form {
     background-color: black;
 }
 .searchGrp {
+    display:flex;
     flex-grow:3;
     justify-content:right;
 }
