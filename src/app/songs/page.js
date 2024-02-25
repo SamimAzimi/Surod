@@ -20,7 +20,7 @@ function Page() {
       setSongs(data)
       console.log(songs)
     }
-    const handleSong = (song)=>
+    const handleSong = (song, id)=>
     {
       console.log(song)
     }
